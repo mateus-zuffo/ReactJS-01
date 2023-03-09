@@ -1,7 +1,15 @@
+import DefaultExport from "./DefaultExport";
+import { NamedExport } from "./NamedExport";
+
 function App() {
 
   return (
-    <p>Hello World</p>
+    <div>
+      <DefaultExport/>
+      <DefaultExport/>
+      <NamedExport/>
+      <NamedExport/>
+    </div>
   )
 }
 
