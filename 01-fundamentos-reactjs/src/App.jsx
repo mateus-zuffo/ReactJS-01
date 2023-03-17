@@ -1,3 +1,4 @@
+import { Header } from "./components/header";
 import DefaultExport from "./DefaultExport";
 import { NamedExport } from "./NamedExport";
 import { Post } from "./Post";
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <div>
+      <Header/>
       <DefaultExport/>
       <DefaultExport/>
       <NamedExport/>
