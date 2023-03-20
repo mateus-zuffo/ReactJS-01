@@ -2,7 +2,8 @@ import { Header } from "./components/header";
 import DefaultExport from "./DefaultExport";
 import { NamedExport } from "./NamedExport";
 import { Post } from "./Post";
-import "./style.css";
+import "./global.css";
+import styles from './App.module.css'
 
 function App() {
 
