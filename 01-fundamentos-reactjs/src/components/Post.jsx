@@ -1,3 +1,4 @@
+import { Comment } from './comment';
 import styles from './Post.module.css';
 
 export function Post(){
@@ -22,7 +23,7 @@ export function Post(){
                     <a href="">#ReactJS</a>  
                 </p>
             </div>
-            <div className={styles.commentForm}>
+            <form className={styles.commentForm}>
                 <strong> Deixe seu feedback</strong>
                 <textarea placeholder="Deixe um comentário">
                     
@@ -30,6 +31,11 @@ export function Post(){
                 <footer>
                     <button type="submit">Comentar</button>
                 </footer>
+            </form>
+            <div className={styles.commentList}>
+                <Comment/>
+                <Comment/>
+                <Comment/>
             </div>
         </article>
     )
