@@ -19,10 +19,6 @@ function App() {
           author="Mateus Zuffo"
           content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur in nemo voluptas ut eius laboriosam perspiciatis molestias repellendus inventore corrupti velit, nobis voluptates officia ipsam vero, expedita earum, qui culpa?"
         />
-        <Post
-          author="Mateus Zuffo"
-          content="Teste ipsum dolor sit amet consectetur adipisicing elit. Pariatur in nemo voluptas ut eius laboriosam perspiciatis molestias repellendus inventore corrupti velit, nobis voluptates officia ipsam vero, expedita earum, qui culpa?"
-        />
       </main>  
       </div>
     </div>
