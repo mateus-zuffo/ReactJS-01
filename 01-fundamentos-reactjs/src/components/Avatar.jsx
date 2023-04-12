@@ -3,13 +3,13 @@ import styles from './Avatar.module.css';
 export function Avatar(props){
     return(
         <img 
-            className={tipoAvatar(props.tipoAvatar)} 
+            className={avatarType(props.avatarType)} 
             src={props.src} 
         /> 
     );
 }
 
-function tipoAvatar(props){
+function avatarType(props){
     switch(props){
         case 'Sidebar':
             return styles.avatarSidebar;
