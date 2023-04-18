@@ -3,13 +3,29 @@ import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 import styles from './Post.module.css';
 import { ptBR } from 'date-fns/locale';
-import { useState } from 'react';
+import { FormEvent, ChangeEvent, InvalidEvent, useState } from 'react';
 
 const avatarTypePost = 'Post';
 const avatarTypeComment = 'Comment';
 
+export interface PostProps {
+    id: number,
+    author: {
+        name: string,
+        role: string,
+        avatar_url: string,
+    },
+    publishedAt: Date,
+    content: Content[],
+}
 
-export function Post({author, publishedAt, content}){
+export interface Content {    
+    type: 'paragraph' | 'link',
+    content: string,    
+}
+
+
+export function Post({author, publishedAt, content}: PostProps){
     const publishedAtFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm",{locale:ptBR});
     const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {locale: ptBR, addSuffix:true }); 
     const [newCommentText, setNewCommentText] = useState('');
@@ -28,15 +44,16 @@ export function Post({author, publishedAt, content}){
         },
     ]);
 
-    function handleNewCommentChange(){
+    function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity('');
         setNewCommentText(event.target.value);
     }
-    function handleNewCommentInvalid(){
+
+    function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>){
         event.target.setCustomValidity('Este campo e obrigatório!');
     }
 
-    function handleCreateNewComment(){
+    function handleCreateNewComment(event: FormEvent){
         event.preventDefault();
         const newComment = {
             id: comments.length+1,
@@ -49,7 +66,7 @@ export function Post({author, publishedAt, content}){
         setNewCommentText('');
     } 
 
-    function deleteComment(commentId) {
+    function deleteComment(commentId: number) {
         const commentsWithoutDeletedOne = comments.filter(comment=>{
             return comment.id != commentId;
         })

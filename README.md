@@ -1,9 +1,10 @@
 # ReactJS
 
-This repository was created and used to learn and practice ReactJS bases on a course from [rocketseat](https://www.rocketseat.com.br/).
+This repository was created and used to learn and practice ReactJS fundamentals on a course from [Rocketseat](https://www.rocketseat.com.br/).
 
 <ul>
-    <li>Parte 1: Fundamentos do react </li>
+    <li>Parte 1: Fundamentals of react </li>
+    <li>Parte 2: Same react project but using TypeScript </li>
 </ul>
 
 
